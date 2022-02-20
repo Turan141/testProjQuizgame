@@ -1,92 +1,38 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.App {
+  text-align: center;
 }
 
-.MainSection{
-    background-color: #E7E8D1;
-    display: flex;
-    justify-content: center;
-    min-height: 757px;
-    flex-wrap: wrap;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.questionMainWindow{
-    height: 400px;
-    max-width: 450px;
-    border: black 1px solid;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    background-color: #B85042;
-    overflow: hidden;
-    gap: 20px;
-    border-radius: 15px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
-
-
-.questionMainWindow h1{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 500px;
-    max-height: 150px;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.questionMainWindow input{
-    height: 100px;
-    width: 400px;
-    font-size: 20px;
-    background-color: darkgray;
+.App-link {
+  color: #61dafb;
 }
 
-.questionSection{
-    flex-display: column;
-    justify-content: center;
-    overflow: hidden;
-    gap: 20px;
-    align-items: center;
-
-}
-
-.answerBtnBlock{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 400px;
-    height: 100px;
-    text-align: center;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-.answerBtn{
-    display: flex;
-    font-size: 15px;
-    font-weight: bold;
-    justify-content: center;
-    height: 50px;
-    width: 190px;
-    text-align: center;
-    align-items: center;
-    background-color: #A7BEAE ;
-    border:none;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 5px #E7E8D1;
-}
-.answerBtn:hover{
-    cursor: pointer;
-    background-color: white;
-    box-shadow: 0 0 10px 5px darkolivegreen;
-    transition: 0.5s ease;
-}
-
-.testImg{
-    object-fit: cover;
-    border-radius: 50px;
-}
-.testDivImg{
-    display: flex;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
