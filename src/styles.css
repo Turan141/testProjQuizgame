@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.MainSection{
+    background-color: #b9936c;
+    display: flex;
+    justify-content: center;
+    min-height: 757px;
+    flex-wrap: wrap;
+}
+
+.questionMainWindow{
+    margin-bottom: 20px;
+    height: 400px;
+    max-width: 450px;
+    border: #e6e2d3 1px solid;
+    box-shadow: 0 0 2px 5px #e6e2d3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background-color: #dac292;
+    overflow: hidden;
+    gap: 20px;
+    border-radius: 15px;
+}
+
+
+
+.questionMainWindow h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    max-height: 150px;
+}
+
+.questionMainWindow input{
+    height: 100px;
+    width: 400px;
+    font-size: 20px;
+    background-color: #c4b7a6;
+    border-radius: 10px;
+    border: none;
+}
+
+.questionSection{
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.answerBtnBlock{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.answerBtn{
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center;
+    height: 50px;
+    width: 190px;
+    text-align: center;
+    align-items: center;
+    background-color: #c4b7a6 ;
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #E7E8D1;
+}
+
+@media screen and (max-width: 600px) {
+    .answerBtnBlock {
+        height: 100px;
+        width: 400px;
+    }
+    .answerBtn{
+        width: 150px;
+        height: 40px;
+    }
+    .questionMainWindow input{
+        width: 300px;
+        height: 50px;
+        background-color: #c4b7a6;
+    }
+    .questionMainWindow h1{
+        font-size: 26px;
+        margin-top: 30px;
+    }
+    .questionMainWindow{
+        width: 350px;
+    }
+}
+
+.answerBtn:hover{
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 0 10px 5px darkolivegreen;
+    transition: 0.5s ease;
+}
+
+.testImg{
+    object-fit: cover;
+    border-radius: 50px;
+}
+.testDivImg{
+    display: flex;
+}
