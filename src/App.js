@@ -1,6 +1,6 @@
 import "./App.css";
 import { Fragment, useEffect, useState } from "react";
-import './styles.css'
+import "./styles.css";
 
 function App() {
     const [questions, setQuestions] = useState([]);
@@ -32,11 +32,20 @@ function App() {
         let answerButtons = answers.map((elem) => {
             return <button className="answerBtn">{elem}</button>;
         });
-
         return (
             <>
                 <h1>{props.question}</h1>
-                {props.image ? <div className="testDivImg"><img className="testImg" width="400px" height="150px" src={props.image} /> </div> : null}
+                {props.image ? (
+                    <div className="testDivImg">
+                        <img
+                            alt="pic"
+                            className="testImg"
+                            width="400px"
+                            height="150px"
+                            src={props.image}
+                        />{" "}
+                    </div>
+                ) : null}
                 <div className="answerBtnBlock">{answerButtons}</div>
             </>
         );
@@ -46,7 +55,18 @@ function App() {
         return (
             <>
                 <h1>{props.question}</h1>
-                {props.image ? <div className="testDivImg"><img className="testImg" width="400px" height="150px" src={props.image}/> </div> : null}
+                {props.image ? (
+                    <div className="testDivImg">
+                        <img
+                            alt="pic"
+                            className="testImg"
+                            width="400px"
+                            height="150px"
+                            src={props.image}
+                        />{" "}
+                    </div>
+                ) : null}
+                <p>Введите ваш ответ</p>
                 <input type="text" />
             </>
         );
