@@ -43,22 +43,22 @@ function App() {
     });
 
     function Timer({ props }) {
-        const [seconds, setSeconds] = useState(240);
+        const [seconds, setSeconds] = useState(60);
         const [isActive, setIsActive] = useState(true);
 
         useEffect(() => {
             let interval = null;
-            if (props === true) {
+            if (props === true || seconds <= 0) {
                 setIsActive(false);
             } else if (isActive) {
                 interval = setInterval(() => {
                     setSeconds((seconds) => seconds - 1);
                 }, 1000);
-            } else if (!isActive && seconds === 0) {
+            } else if (!isActive) {
                 clearInterval(interval);
             }
             return () => clearInterval(interval);
-        }, [isActive, props]);
+        }, [isActive, props, seconds]);
 
         return (
             <div className="timer">
