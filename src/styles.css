@@ -117,7 +117,14 @@
     }
     .questionMainWindow{
         width: 350px;
-
+    }
+    .doneModal{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 200px;
+        left:0px;
     }
 }
 
@@ -148,3 +155,16 @@
 .questionSbmtBtn:hover{
     cursor: pointer;
 }
+
+.doneModal{
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #61dafb;
+    height: 500px;
+    z-index: 1;
+    width: 780px;
+}
+
