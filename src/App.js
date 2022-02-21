@@ -60,7 +60,6 @@ function App() {
             return () => clearInterval(interval);
         }, [isActive, props]);
 
-        console.log(props);
         return (
             <div className="timer">
                 <div className="time">Оставшеся время - {seconds}с</div>
