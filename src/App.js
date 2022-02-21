@@ -4,6 +4,16 @@ import "./styles.css";
 
 function App() {
     const [questions, setQuestions] = useState([]);
+    let windowPosition = 0
+    function nextQuestion(){
+        let quizWindow = document.querySelector('.questionSection')
+        windowPosition-=460
+        quizWindow.style.top = windowPosition + 'px'
+        if (windowPosition <= -1800) {
+            quizWindow.style.top = "0px"
+            windowPosition = 0
+        }
+    }
 
     useEffect(() => {
         (async function fetchMyAPI() {
@@ -30,8 +40,9 @@ function App() {
     function TestModule({ props }) {
         let answers = props.options;
         let answerButtons = answers.map((elem) => {
-            return <button className="answerBtn">{elem}</button>;
+            return <button onClick={nextQuestion} className="answerBtn">{elem}</button>;
         });
+
         return (
             <>
                 <h1>{props.question}</h1>
@@ -66,8 +77,8 @@ function App() {
                         />{" "}
                     </div>
                 ) : null}
-                <p>Введите ваш ответ</p>
                 <input type="text" />
+                <button className='questionSbmtBtn' onClick={nextQuestion}>Sumbit</button>
             </>
         );
     }
@@ -75,7 +86,9 @@ function App() {
     return (
         <Fragment>
             <div className="MainSection">
-                <div className="questionSection">{data}</div>
+                <div className="questionWindow">
+                    <div className="questionSection">{data}</div>
+                </div>
             </div>
         </Fragment>
     );
