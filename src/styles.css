@@ -93,7 +93,7 @@
     border-radius: 20px;
     box-shadow: 0 0 10px 5px #E7E8D1;
 }
-@media only screen and (min-width: 1285px) and (max-width: 2500px) {
+@media only screen and (min-width: 1280px) and (max-width: 2500px) {
     .MainSection{
         height: 1080px;
     }
@@ -101,14 +101,7 @@
         width: 800px;
     }
 }
-@media only screen and (min-width: 1536px) and (max-width: 2500px) {
-    .MainSection{
-        height: 1080px;
-    }
-    .questionWindow{
-        width: 800px;
-    }
-}
+
 @media only screen and (min-width: 767px) and (max-width: 1280px){
     .MainSection{
         height: 1080px;
