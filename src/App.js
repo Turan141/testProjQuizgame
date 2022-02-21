@@ -43,7 +43,7 @@ function App() {
     });
 
     function Timer({ props }) {
-        const [seconds, setSeconds] = useState(60);
+        const [seconds, setSeconds] = useState(240);
         const [isActive, setIsActive] = useState(true);
 
         useEffect(() => {
