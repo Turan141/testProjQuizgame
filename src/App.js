@@ -4,16 +4,19 @@ import "./styles.css";
 
 function App() {
     const [questions, setQuestions] = useState([]);
-    const [isDone, setIsDone] = useState(false)
+    const [isDone, setIsDone] = useState(false);
+
     let windowPosition = 0;
+
     function nextQuestion() {
         let quizWindow = document.querySelector(".questionSection");
         windowPosition -= 460;
         quizWindow.style.top = windowPosition + "px";
+        console.log(windowPosition);
         if (windowPosition <= -1800) {
             quizWindow.style.top = "0px";
             windowPosition = 0;
-            setIsDone(true)
+            setIsDone(true);
         }
     }
 
@@ -39,12 +42,42 @@ function App() {
         );
     });
 
+    function Timer({ props }) {
+        const [seconds, setSeconds] = useState(60);
+        const [isActive, setIsActive] = useState(true);
+
+        useEffect(() => {
+            let interval = null;
+            if (props === true) {
+                setIsActive(false);
+            } else if (isActive) {
+                interval = setInterval(() => {
+                    setSeconds((seconds) => seconds - 1);
+                }, 1000);
+            } else if (!isActive && seconds === 0) {
+                clearInterval(interval);
+            }
+            return () => clearInterval(interval);
+        }, [isActive, props]);
+
+        console.log(props);
+        return (
+            <div className="timer">
+                <div className="time">Оставшеся время - {seconds}с</div>
+            </div>
+        );
+    }
 
     function TestModule({ props }) {
         let answers = props.options;
         let answerButtons = answers.map((elem) => {
             return (
-                <button disabled={isDone} onClick={nextQuestion} className="answerBtn">
+                <button
+                    key={elem}
+                    disabled={isDone}
+                    onClick={nextQuestion}
+                    className="answerBtn"
+                >
                     {elem}
                 </button>
             );
@@ -84,8 +117,13 @@ function App() {
                         />{" "}
                     </div>
                 ) : null}
+
                 <input type="text" />
-                <button disabled={isDone} className="questionSbmtBtn" onClick={nextQuestion}>
+                <button
+                    disabled={isDone}
+                    className="questionSbmtBtn"
+                    onClick={nextQuestion}
+                >
                     Sumbit
                 </button>
             </>
@@ -94,6 +132,7 @@ function App() {
 
     return (
         <Fragment>
+            <Timer props={isDone} />
             <div className="MainSection">
                 <div className="questionWindow">
                     <div className="questionSection">{data}</div>
